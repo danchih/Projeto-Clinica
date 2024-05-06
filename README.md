@@ -53,11 +53,9 @@ npm start electron .
 ```
 
 Acesse a pagina Inicial do Site da Clinica:
-
 [http://localhost:8080](http://localhost:8080)
 
 Acesse o Banco de Dados MySQL (phpMyAdmin):
-
 [http://localhost:8081](http://localhost:8081)
 
 
