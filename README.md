@@ -4,7 +4,7 @@
 - Somos uma clínica de psicologia e necessitamos desenvolver um sistema que seja usado pelos nossos clientes para nos encontrarem na internet e também para nos conhecerem! Esse sistema também deve ser utilizado pelos profissionais da clínica (psicólogos e atendentes), existindo a possibilidade de consultar e acrescentar informações dos clientes (cada profissional com sua devida permissão de acesso e visualização).
 
 
-### Comandos Para a Instalação do Projeto:
+## Comandos Para a Instalação do Projeto:
 Instale os recursos necessarios para a utilizacao do Electron:
 ```sh
 npm install
@@ -41,7 +41,8 @@ Gere a key do projeto Laravel:
 php artisan key:generate
 ```
 
-### Comandos Rodar o Projeto:
+
+## Comandos Rodar o Projeto:
 Caso esteja dentro da pasta WWW volte para Pasta Inicial do projeto (Projeto Clinica):
 ```sh
 cd ..
@@ -50,10 +51,13 @@ Acesse o Servidor Electron:
 ```sh
 npm start electron .
 ```
+
 Acesse a pagina Inicial do Site da Clinica:
 [http://localhost:8080](http://localhost:8080)
+
 Acesse o Banco de Dados MySQL (phpMyAdmin):
 [http://localhost:8081](http://localhost:8081)
+
 
 ### Pessoas Desenvolvedoras: 
 - Beatriz Cupa Newman
