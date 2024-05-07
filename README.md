@@ -5,6 +5,14 @@
 
 
 ## Comandos Para a Instalação do Projeto:
+Instale a imagem Node do container:
+```sh
+docker pull node
+```
+Suba o container Node:
+```sh
+docker run --name node_container -it node
+```
 Instale os recursos necessarios para a utilizacao do Electron:
 ```sh
 npm install
