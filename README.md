@@ -48,6 +48,17 @@ Gere a key do projeto Laravel:
 ```sh
 php artisan key:generate
 ```
+Saia do container:
+```sh
+exit
+```
+Intale os recursos necessarios para utilizar VueJS/Tailwindcss do projeto:
+```sh
+npm install
+```
+```sh
+npm run dev
+```
 
 
 ## Comandos Rodar o Projeto:
