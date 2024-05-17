@@ -11,7 +11,11 @@ class Paciente extends Authenticatable
 
     protected $fillable = [
         'nome',
+        'cep',
         'endereco',
+        'bairro',
+        'cidade',
+        'estado',
         'telefone',
         'login',
         'senha',

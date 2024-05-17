@@ -19,7 +19,12 @@ class PacienteController extends Controller
 
         $mensagens = [
             'nome.required' => 'O nome é obrigatório.',
+            'cep.required' => 'O CEP é obrigatório.',
+            'cep.size' => 'O CEP deve ter 8 caracteres.',
             'endereco.required' => 'O endereço é obrigatório.',
+            'bairro.required' => 'O bairro é obrigatório.',
+            'cidade.required' => 'A cidade é obrigatória.',
+            'estado.required' => 'O estado é obrigatório.',
             'telefone.required' => 'O telefone é obrigatório.',
             'telefone.max' => 'O telefone deve ter no máximo 15 caracteres.',
             'login.required' => 'O login é obrigatório.',
@@ -30,7 +35,11 @@ class PacienteController extends Controller
 
         $request->validate([
             'nome' => 'required|string|max:255',
+            'cep' => 'required|string|size:8',
             'endereco' => 'required|string|max:255',
+            'bairro' => 'required|string|max:255',
+            'cidade' => 'required|string|max:255',
+            'estado' => 'required|string|max:2',
             'telefone' => 'required|string|max:15',
             'login' => 'required|string|max:255|unique:pacientes,login',
             'senha' => 'required|string|min:6',
@@ -38,7 +47,11 @@ class PacienteController extends Controller
 
         $paciente = Paciente::create([
             'nome' => $request->nome,
+            'cep' => $request->cep,
             'endereco' => $request->endereco,
+            'bairro' => $request->bairro,
+            'cidade' => $request->cidade,
+            'estado' => $request->estado,
             'telefone' => $request->telefone,
             'login' => $request->login,
             'senha' => bcrypt($request->senha), // Criptografar a senha
