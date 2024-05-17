@@ -3,6 +3,8 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\PacienteController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,5 +34,20 @@ Route::get('/login', function () {
     return Inertia::render('Login');
 })->name('login');
 
+Route::get('/cadastro', function () {
+    return Inertia::render('Cadastro');
+})->name('cadastro');
+
+//Route::resource('pacientes', PacienteController::class);
+
+/*Route::get('pacientes', [PacienteController::class, 'create'])
+                ->name('pacientes');
+Route::post('/pacientes', [PacienteController::class, 'store']);*/
+
+Route::get('pacientes', [PacienteController::class, 'create'])->name('pacientes.create');
+Route::post('/pacientes', [PacienteController::class, 'store'])->name('pacientes.store');
+
 require __DIR__.'/auth.php';
+
+
 

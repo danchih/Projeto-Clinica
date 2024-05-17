@@ -10,6 +10,8 @@
           <a href="#contatos"><button @click="scrollToContato" class="text-white font-bold hover:underline ml-4">Contatos</button></a>
           <a href="#contatos"><button @click="scrollToContato" class="text-white font-bold hover:underline ml-4">Entre em contato</button></a>
           <a href="/login" class="text-white font-bold hover:underline ml-4">Login</a>
+          <a href="/login" class="text-white font-bold hover:underline ml-4">Teste</a>
+
         </div>
       </div>
     </div>
