@@ -40,6 +40,10 @@ Gere a key do projeto Laravel:
 ```sh
 php artisan key:generate
 ```
+Suba as Tabelas no phpMyAdmin:
+```sh
+php artisan migrate:fresh --seed
+```
 
 
 ## Comandos Rodar o Projeto:
