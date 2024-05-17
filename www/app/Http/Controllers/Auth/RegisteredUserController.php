@@ -38,7 +38,7 @@ class RegisteredUserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             //'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'password' => 'required',
+            'password' => 'required|min:6',
         ]);
 
         $user = User::create([
@@ -47,6 +47,14 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        if ($request->role === 'secretaria') {
+            $user->assignRole('secretaria');
+        } else if ($request->role === 'psicologo'){
+            $user->assignRole('psicologo');
+        } else {
+            $user->assignRole('cliente');
+        }
+        
         event(new Registered($user));
 
         Auth::login($user);

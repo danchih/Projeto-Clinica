@@ -6,6 +6,13 @@ import { Head } from '@inertiajs/inertia-vue3';
 <template>
     <Head title="Dashboard" />
 
+    <!--comando abaixo verifica quais sao os roles e permission do user logado-->
+    <!--
+    <div>
+        {{ $page.props }}
+    </div>
+    -->
+
     <AuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -22,5 +29,18 @@ import { Head } from '@inertiajs/inertia-vue3';
                 </div>
             </div>
         </div>
+
+        <div v-if="$page.props.user.roles.includes('secretaria')">
+            <h3>secretaria aqui</h3>
+        </div>
+
+        <div v-if="$page.props.user.roles.includes('psicologo')">
+            <h3>psicologo aqui</h3>
+        </div>
+        
+        <div v-if="$page.props.user.roles.includes('cliente')">
+            <h3>cliente aqui</h3>
+        </div>
+
     </AuthenticatedLayout>
 </template>

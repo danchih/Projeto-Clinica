@@ -12,6 +12,7 @@ const form = useForm({
     password: '',
     password_confirmation: '',
     terms: false,
+    role: '',
 });
 
 const submit = () => {
@@ -19,6 +20,7 @@ const submit = () => {
         onFinish: () => form.reset('password', 'password_confirmation'),
     });
 };
+
 </script>
 
 <template>
@@ -50,6 +52,15 @@ const submit = () => {
                 <InputError class="mt-2" :message="form.errors.password_confirmation" />
             </div>
 
+            <div class="mt-4">
+                <InputLabel for="role" value="Role" />
+                <select v-model="selectedOption" @change="handleChange" class="block w-full px-4 py-2 mt-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500">
+                    <option disabled value="">Selecione uma opção</option>
+                    <option id="role" v-for="option in options" :value="option.value" :key="option.value">{{ option.label }}</option>
+                </select>
+            </div>
+
+
             <div class="flex items-center justify-end mt-4">
                 <Link :href="route('login')" class="underline text-sm text-gray-600 hover:text-gray-900">
                     Already registered?
@@ -62,3 +73,26 @@ const submit = () => {
         </form>
     </GuestLayout>
 </template>
+
+  
+  <script>
+  export default {
+    data() {
+      return {
+        selectedOption: '',
+        options: [
+          { label: 'Secretaria', value: 'secretaria' },
+          { label: 'Psicólogo', value: 'psicologo' },
+          { label: 'Cliente', value: 'cliente' },
+        ]
+      };
+    },
+    methods: {
+      handleChange() {
+        // Lógica a ser executada quando a opção é alterada
+        console.log('Opção selecionada:', this.selectedOption);
+      }
+    }
+  };
+  </script>
+  
