@@ -4,6 +4,7 @@
       <div class="mt-8">
         <a href="/listapaciente" class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2">Lista de Pacientes</a>
         <a href="/documentos" class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2">Documentos</a>
+        <a href="/informacoes" class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2">Informações da Sessão</a>
       </div>
     </div>
   </template>

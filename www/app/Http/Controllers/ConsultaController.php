@@ -86,4 +86,12 @@ class ConsultaController extends Controller
             'consultas' => $consultas,
         ]);
     }
+
+    public function infoall()
+    {
+        $consultas = Consulta::with ('paciente')-> with('psicologo')->get();
+        return Inertia::render('Informacao', [
+            'consultas' => $consultas,
+        ]);
+    }
 }

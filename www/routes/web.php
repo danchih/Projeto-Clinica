@@ -46,6 +46,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::get('/agendar-consulta', [ConsultaController::class, 'create'])->name('consultas.create');
 Route::post('/consultas', [ConsultaController::class, 'store'])->name('consultas.store');
 Route::get('/historico', [ConsultaController::class, 'historico'])->name('consultas.historico');
+Route::get('/informacoes', [ConsultaController::class, 'infoall'])->name('infoall.nome');
 
 Route::get('/cadastro', function () {
     return Inertia::render('Cadastro');
@@ -62,6 +63,10 @@ Route::get('/listapaciente', function () {
 Route::get('/documentos', function () {
     return Inertia::render('Documentospaciente');
 })->name('documentos');
+
+Route::get('/informacoes', function () {
+    return Inertia::render('Informacao');
+})->name('informacoes');
 
 Route::get('/pacientes', [PacienteController::class, 'index']);
 Route::post('/pacientes', [PacienteController::class, 'store']);

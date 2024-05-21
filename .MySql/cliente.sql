@@ -12,7 +12,7 @@ SET time_zone = "+00:00";
 -- Banco de dados: laravel
 --
 
-insert into pacientes (nome, endereco, telefone, usuario, senha)
+insert into `pacientes` (`nome`, `endereco`, `telefone`, `login`, `senha`)
 values
 	('Daniela Hayashi', 'Rua doutor ', '15996548524', 'dani', '123'), 
 	('Carlos Teixeira', 'Rua francisca', '15663259875', 'carlos', '1234');
