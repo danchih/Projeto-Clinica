@@ -30,6 +30,7 @@ import { Head } from '@inertiajs/inertia-vue3';
                     <div class="p-6 bg-white border-b border-gray-200">
                         <a :href="route('consultas.historico')" class="text-black-600 hover:text-black-800 font-bold text-lg">Histórico de Consultas</a>
                         <h1 class="ml-4 mt-2">Clique no link acima para verificar seu histórico de atendimentos.</h1>
+                        <h1>OlÁ </h1>
                     </div>
                 </div>
             </div>
