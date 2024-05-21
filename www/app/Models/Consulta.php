@@ -9,7 +9,7 @@ class Consulta extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['paciente_id', 'psicologo_id', 'data', 'horario_inicio', 'horario_fim'];
+    protected $fillable = ['paciente_id', 'psicologo_id', 'data', 'horario_inicio', 'horario_fim', 'informacao'];
 
     public function paciente()
     {

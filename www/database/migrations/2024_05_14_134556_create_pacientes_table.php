@@ -11,13 +11,14 @@ return new class extends Migration
         Schema::create('pacientes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
-            $table->string('email')->unique();
-            $table->integer('cep');
+            $table->string('cep');
             $table->string('endereco');
             $table->string('bairro');
             $table->string('cidade');
             $table->string('estado');
             $table->string('telefone');
+            $table->string('login')->unique();
+            $table->string('senha');
             $table->timestamps();
         });
     }

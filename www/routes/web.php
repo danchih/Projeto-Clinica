@@ -42,9 +42,35 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('homecliente');
 });
 
+//Consultas
 Route::get('/agendar-consulta', [ConsultaController::class, 'create'])->name('consultas.create');
 Route::post('/consultas', [ConsultaController::class, 'store'])->name('consultas.store');
-
 Route::get('/historico', [ConsultaController::class, 'historico'])->name('consultas.historico');
+
+Route::get('/cadastro', function () {
+    return Inertia::render('Cadastro');
+})->name('cadastro');
+
+Route::get('/psicologa', function () {
+    return Inertia::render('Psicologa');
+})->name('psicologa');
+
+Route::get('/listapaciente', function () {
+    return Inertia::render('Listapaciente');
+})->name('listapaciente');
+
+Route::get('/documentos', function () {
+    return Inertia::render('Documentospaciente');
+})->name('documentos');
+
+Route::get('/pacientes', [PacienteController::class, 'index']);
+Route::post('/pacientes', [PacienteController::class, 'store']);
+Route::put('/pacientes/{id}', [PacienteController::class, 'update']); // Rota de atualização
+
+Route::get('pacientes', [PacienteController::class, 'create'])->name('pacientes.create');
+Route::post('/pacientes', [PacienteController::class, 'store'])->name('pacientes.store');
+
+
+Route::get('/pacientes', [PacienteController::class, 'index']);
 
 require __DIR__.'/auth.php';

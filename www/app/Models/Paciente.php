@@ -10,7 +10,21 @@ class Paciente extends Model
     use HasFactory;
 
     protected $table = 'pacientes';
-    protected $fillable = ['nome', 'email', 'cep', 'endereco','bairro','cidade','estado','telefone'];
+    protected $fillable = [
+        'nome',
+        'cep',
+        'endereco',
+        'bairro',
+        'cidade',
+        'estado',
+        'telefone',
+        'login',
+        'senha',
+    ];
+
+    protected $hidden = [
+        'senha',
+    ];
 
     public function user()
     {

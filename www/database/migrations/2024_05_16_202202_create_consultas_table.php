@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date('data');
             $table->time('horario_inicio');
             $table->time('horario_fim');
+            $table->string('informacao');
             $table->timestamps();
         });
     }

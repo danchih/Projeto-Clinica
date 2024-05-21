@@ -26,6 +26,7 @@ class ConsultaController extends Controller
             'data' => 'required|date',
             'horario_inicio' => 'required|date_format:H:i',
             'horario_fim' => 'required|date_format:H:i',
+            'informacao'=> 'required|date_format:H:i',
         ]);
 
         // Verificar se o psicólogo está disponível nesse horário
@@ -57,6 +58,7 @@ class ConsultaController extends Controller
             'data' => $request->data,
             'horario_inicio' => $request->horario_inicio,
             'horario_fim' => $request->horario_fim,
+            'informacao'=>null,
         ]);
 
         // Redirecionar após a criação da consulta
@@ -65,11 +67,19 @@ class ConsultaController extends Controller
 
     public function historico()
     {
+        // Data e hora atual
+        $now = now();
+
         // Obtém as consultas do paciente logado, com os dados completos do psicólogo
         $consultas = Consulta::where('paciente_id', auth()->user()->paciente_id)
                             ->with('psicologo') // Carrega o relacionamento psicologo
-                            ->orderBy('data', 'desc')
-                            ->orderBy('horario_inicio', 'desc')
+                            ->where('data', '<', $now->toDateString()) // Consultas anteriores ao dia de hoje
+                            ->orWhere(function ($query) use ($now) {
+                                $query->where('data', '=', $now->toDateString())
+                                    ->where('horario_inicio', '<=', $now->toTimeString());
+                            })
+                            ->orderBy('data', 'asc')
+                            ->orderBy('horario_inicio', 'asc')
                             ->get();
 
         return Inertia::render('HistoricoConsultas', [
