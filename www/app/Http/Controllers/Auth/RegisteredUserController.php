@@ -42,20 +42,7 @@ class RegisteredUserController extends Controller
                 'password' => ['required', 'confirmed', Password::defaults()],
             ]);
 
-            // Verificar se existe um cliente com o mesmo email
-            $paciente = Paciente::where('email', $request->email)->first();
-
-            if (!$paciente) {
-                Log::error('Paciente não encontrado com este e-mail: ' . $request->email);
-                return redirect()->back()->withErrors(['email' => 'Paciente não encontrado com este e-mail.']);
-            }
-
-            $user = User::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => Hash::make($request->password),
-                'paciente_id' => $paciente->id,
-            ]);
+            
 
             event(new Registered($user));
 
