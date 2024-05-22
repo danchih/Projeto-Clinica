@@ -1,4 +1,10 @@
 <template>
+  <AuthenticatedLayout>
+  <template #header>
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        Olá, {{ $page.props.auth.user.nome }}
+    </h2>
+  </template>
   <div class="container mx-auto py-8">
     <h1 class="text-2xl font-bold mb-4 text-center">Lista de Pacientes</h1>
     <div class="overflow-x-auto">
@@ -13,7 +19,6 @@
             <th class="px-4 py-2 border">Estado</th>
             <th class="px-4 py-2 border">Telefone</th>
             <th class="px-4 py-2 border">Editar Informações</th>
-            <th class="px-4 py-2 border">Informações da sessão</th>
           </tr>
         </thead>
         <tbody>
@@ -50,9 +55,7 @@
               <button v-if="paciente.editing" @click="savePaciente(paciente)" class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded">Salvar</button>
               <button v-else @click="editPaciente(paciente)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">Editar</button>
             </td>
-            <td class="px-4 py-2 border">
-              <button @click="abrirModalSessao(paciente)" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-2 rounded">Informações</button>
-            </td>
+            
           </tr>
         </tbody>
       </table>
@@ -88,7 +91,12 @@
       </div>
     </div>
   </div>
+</AuthenticatedLayout>
 </template>
+
+<script setup>
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+</script>
 
 <script>
 import axios from 'axios';

@@ -6,6 +6,7 @@ use Inertia\Inertia;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ConsultaController;
 use App\Http\Controllers\PacienteController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,7 +71,8 @@ Route::get('/pacientes', [PacienteController::class, 'index']);
 Route::post('/pacientes', [PacienteController::class, 'store']);
 Route::put('/pacientes/{id}', [PacienteController::class, 'update']); // Rota de atualização
 
-
+//Rota do MailTrap
+Route::post('/send-email', [ContactController::class, 'sendEmail']);
 
 
 

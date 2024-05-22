@@ -1,4 +1,10 @@
 <template>
+  <AuthenticatedLayout>
+  <template #header>
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        Olá, {{ $page.props.auth.user.nome }}
+    </h2>
+  </template>
   <div class="container mx-auto py-8 flex flex-col items-center">
     <h1 class="text-2xl font-bold mb-4">Documentos de pacientes</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -48,7 +54,13 @@
       </div>
     </div>
   </div>
+</AuthenticatedLayout>
 </template>
+
+<script setup>
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+</script>
+
 
 <script>
 import jsPDF from 'jspdf'; // biblioteca para salvar em pdf 

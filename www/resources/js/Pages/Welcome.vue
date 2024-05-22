@@ -34,15 +34,60 @@
             Esse sistema também deve ser utilizado pelos profissionais da clínica (psicólogos e atendentes), existindo a possibilidade de consultar e acrescentar informações dos clientes (cada profissional com sua devida permissão de acesso e visualização).
             </p>
 
+            
             <p id="depoimentos" class="mt-8">
-              <strong> Depoimentos:</strong> Somos uma clínica de psicologia e necessitamos desenvolver um sistema que seja usado pelos nossos clientes para nos encontrarem na internet e também para nos conhecerem!
-            Esse sistema também deve ser utilizado pelos profissionais da clínica (psicólogos e atendentes), existindo a possibilidade de consultar e acrescentar informações dos clientes (cada profissional com sua devida permissão de acesso e visualização).
+              <strong>Depoimentos</strong>
+               <div class="flex flex-col items-center mb-12">
+                <img src="public/images/teste.jpg" alt="Descrição da Imagem" class="w-32 h-32 rounded-full mb-4">                  
+                <p class="text-center text-gray-700">Ana, uma jovem de 28 anos, procurou a nossa clínica devido a sentimentos persistentes de ansiedade e depressão. Ela relatava dificuldade em se concentrar no trabalho, insônia e um sentimento constante de preocupação que prejudicava suas relações pessoais e profissionais.
+                  Inicialmente, Ana foi submetida a uma avaliação detalhada para entender melhor suas necessidades e determinar a melhor abordagem terapêutica. Ela começou a terapia cognitivo-comportamental (TCC), focada em identificar e modificar pensamentos negativos automáticos.
+                  Com o passar das semanas, Ana começou a desenvolver estratégias eficazes para lidar com sua ansiedade. Aprendeu técnicas de relaxamento e começou a implementar mudanças em sua rotina que melhoraram significativamente seu bem-estar.
+                  Após três meses de terapia, Ana relatou uma diminuição significativa nos sintomas de ansiedade. Ela voltou a dormir bem, seu desempenho no trabalho melhorou e ela se sentia mais conectada com amigos e familiares. "A terapia mudou minha vida de uma maneira que eu nunca imaginei ser possível. Estou mais feliz, mais equilibrada e pronta para enfrentar os desafios do dia a dia," disse Ana.
+                  A jornada de Ana é um exemplo inspirador de como o apoio psicológico pode transformar vidas. Nossa clínica está comprometida em oferecer o mesmo nível de cuidado e dedicação a todos os nossos pacientes.</p>
+               </div>
+
+               <div class="flex flex-col items-center mb-12">
+                <img src="public/images/teste.jpg" alt="Descrição da Imagem" class="w-32 h-32 rounded-full mb-4">                  
+                <p class="text-center text-gray-700">Ana, uma jovem de 28 anos, procurou a nossa clínica devido a sentimentos persistentes de ansiedade e depressão. Ela relatava dificuldade em se concentrar no trabalho, insônia e um sentimento constante de preocupação que prejudicava suas relações pessoais e profissionais.
+                  "Quando decidimos procurar ajuda, nosso casamento estava à beira do colapso. As discussões se tornaram constantes, e parecia que não conseguíamos nos entender mais. Estávamos casados há dez anos, mas os últimos dois foram especialmente difíceis. Foi então que encontramos a Clínica de Psicologia Esperança e decidimos tentar a terapia de casal.
+                  Desde a primeira sessão, sentimos que estávamos em boas mãos. A Dra. Clara nos ouviu atentamente e nos ajudou a identificar os padrões negativos de comunicação que estavam corroendo nossa relação. Ela nos ensinou técnicas de comunicação eficaz e nos encorajou a expressar nossos sentimentos de maneira honesta e respeitosa.
+                  Ao longo das sessões, aprendemos a valorizar as pequenas coisas um no outro e a trabalhar juntos para resolver nossos problemas, em vez de nos afastarmos. A terapia nos proporcionou um espaço seguro para discutirmos questões difíceis e nos reconectarmos em um nível mais profundo.
+                  Hoje, nosso relacionamento é mais forte do que nunca. Aprendemos a nos apoiar mutuamente e a lidar com os desafios de maneira construtiva. A Dra. Clara nos deu as ferramentas necessárias para construir um futuro juntos, cheio de compreensão e amor.
+                  A terapia de casal foi um divisor de águas para nós, e somos eternamente gratos pelo apoio que recebemos na Clínica de Psicologia Esperança. Recomendamos fortemente a qualquer casal que esteja enfrentando dificuldades a procurar ajuda. Vale a pena lutar pelo amor e pela felicidade."
+                  - João e Maria</p>
+              </div>
+
+              <div class="flex flex-col items-center mb-12">
+                <img src="public/images/teste.jpg" alt="Descrição da Imagem" class="w-32 h-32 rounded-full mb-4">                  
+                <p class="text-center text-gray-700">Ana, uma jovem de 28 anos, procurou a nossa clínica devido a sentimentos persistentes de ansiedade e depressão. Ela relatava dificuldade em se concentrar no trabalho, insônia e um sentimento constante de preocupação que prejudicava suas relações pessoais e profissionais.
+                  "Somos a família Silva e gostaríamos de compartilhar nossa experiência com a terapia familiar na Clínica de Psicologia. Nosso lar estava passando por um momento muito difícil. A comunicação entre nós havia se tornado praticamente inexistente, e as discussões eram frequentes. Isso afetava principalmente nossos filhos, Lucas e Mariana, de 15 e 12 anos, respectivamente.
+                  Decidimos procurar ajuda porque não queríamos que essas tensões destruíssem nossa família. Desde o primeiro contato, fomos recebidos com muita empatia e profissionalismo. A Dra. Júlia nos guiou pacientemente através do processo de terapia familiar, criando um ambiente seguro onde todos nós podíamos expressar nossos sentimentos e preocupações.
+                  Durante as sessões, aprendemos a ouvir uns aos outros de maneira ativa e a entender as perspectivas de cada membro da família. A Dra. Júlia nos ensinou técnicas de comunicação eficazes e nos ajudou a identificar e quebrar os ciclos de comportamento negativo que haviam se instalado em nossa rotina.
+                  A terapia nos proporcionou ferramentas práticas para resolver conflitos e fortalecer nossos laços. Aprendemos a valorizar o tempo em família e a apoiar uns aos outros de maneira mais saudável e construtiva. Lucas e Mariana também se beneficiaram imensamente, melhorando sua comunicação conosco e entre eles.
+                  Hoje, podemos dizer com orgulho que somos uma família mais unida e resiliente. Conseguimos transformar nossos desafios em oportunidades de crescimento e estamos mais conectados do que nunca. A terapia familiar na Clínica de Psicologia Esperança foi essencial para essa transformação, e somos eternamente gratos pelo apoio e orientação que recebemos.
+                  Recomendamos a terapia familiar a todas as famílias que estejam enfrentando dificuldades. A ajuda profissional fez toda a diferença para nós, e acreditamos que pode fazer o mesmo por muitas outras famílias."
+                  - Família Silva</p>
+              </div>
             </p>
 
-            <p id="contato" class="mt-8">
-            <strong> Entre em contato</strong>
-            </p>
-
+            <div class="mt-8">
+              <strong>Entre em contato</strong>
+              <form @submit.prevent="sendEmail" class="mt-4">
+                <div class="mb-4">
+                  <label for="email" class="block text-gray-700">Email:</label>
+                  <input type="email" v-model="email" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500" />
+                </div>
+                <div class="mb-4">
+                  <label for="subject" class="block text-gray-700">Assunto:</label>
+                  <input type="text" v-model="subject" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500" />
+                </div>
+                <div class="mb-4">
+                  <label for="message" class="block text-gray-700">Mensagem:</label>
+                  <textarea v-model="message" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"></textarea>
+                </div>
+                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md">Enviar</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -57,6 +102,7 @@
     import Navbar from './Navbar.vue';
     import Fimdapagina from './Fimdapagina.vue';
     import { Head, Link } from '@inertiajs/inertia-vue3';
+    import { ref } from 'vue';
 
     defineProps({
     canLogin: Boolean,
@@ -64,6 +110,25 @@
     laravelVersion: String,
     phpVersion: String,
     });
+
+    const email = ref('');
+    const subject = ref('');
+    const message = ref('');
+
+    const sendEmail = async () => {
+      try {
+        const response = await axios.post('/send-email', {
+          email: email.value,
+          subject: subject.value,
+          message: message.value,
+        });
+        alert(response.data.message);
+      } catch (error) {
+        console.error('Erro ao enviar email:', error);
+        alert('Erro ao enviar email');
+      }
+    };
+
 
 
 </script>

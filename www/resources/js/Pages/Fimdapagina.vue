@@ -4,7 +4,7 @@
     <div class=" flex flex-col">
         
         <div class="rectangle bg-gray-800 p-4">
-            <div class="text-center flex flex-col items-center">
+            <div class="text-white text-center flex flex-col items-center">
             <p class="max-w-screen-2xl text-1xl font-custom3 mt-2">Clínica de Psicologia</p>
             <p class="max-w-screen-2xl text-1xl font-custom3">Rua Professor Dr. Euryclides de Jesus Zerbini, 1516 - Parque Rural Fazenda Santa Cândida</p>
             <p class="max-w-screen-2xl text-1xl font-custom3">13087-571</p>
