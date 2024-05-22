@@ -34,32 +34,46 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nome' => 'required|string|max:255',
-            'username' => 'required|string|max:255|unique:users',
-            'password' => 'required|min:6',
-        ]);
+        try {
+            $mensagens = [
+                'nome.required' => 'O nome é obrigatório.',
+                'username.required' => 'O username é obrigatório.',
+                'username.unique' => 'Este username já está em uso.',
+                'password.required' => 'A password é obrigatória.',
+                'password.min' => 'A password deve ter pelo menos 6 caracteres.'
+            ];
 
-        $user = User::create([
-            'nome' => $request->nome,
-            'username' => $request->username,
-            'password' => Hash::make($request->password),
-            'paciente_id' => NULL,
-        ]);
+            $request->validate([
+                'nome' => 'required|string|max:255',
+                'username' => 'required|string|max:255|unique:users',
+                'password' => 'required|min:6',
+            ], $mensagens);
 
-        switch ($request->role) {
-            case '1':
-                $user->assignRole('secretaria');
-                break;
-            case '2':
-                $user->assignRole('psicologo');
-                break;
-        }     
-        
-        event(new Registered($user));
+            $user = User::create([
+                'nome' => $request->nome,
+                'username' => $request->username,
+                'password' => Hash::make($request->password),
+                'paciente_id' => NULL,
+            ]);
 
-        Auth::login($user);
+            switch ($request->role) {
+                case '1':
+                    $user->assignRole('secretaria');
+                    break;
+                case '2':
+                    $user->assignRole('psicologo');
+                    break;
+            }     
+            
+            event(new Registered($user));
 
-        return redirect(RouteServiceProvider::HOME);
+            //Auth::login($user);
+
+            //return redirect(RouteServiceProvider::HOME);
+            return Redirect::route('register')->with('success', 'Usuário cadastrado com sucesso!');
+        } catch (\Exception $e) {
+            return back()->withErrors(['message' => 'Erro ao cadastrar paciente: ' . $e->getMessage()]);
+        }
+    
     }
 }

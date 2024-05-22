@@ -76,8 +76,6 @@ class PacienteController extends Controller
 
             event(new Registered($user));
 
-            Auth::login($user);
-
             DB::commit();
 
             return response()->json(['message' => 'Paciente cadastrado com sucesso!']);
@@ -86,4 +84,44 @@ class PacienteController extends Controller
             return response()->json(['message' => 'Erro ao cadastrar paciente.'], 500);
         }
     }
+
+    
+    public function index()
+    {
+        return Paciente::all();
+    }
+
+    public function update(Request $request, $id)
+    {
+        $mensagens = [
+            'nome.required' => 'O nome é obrigatório.',
+            'cep.required' => 'O cep é obrigatório.',
+            'telefone.required' => 'O telefone é obrigatório.',
+            'telefone.max' => 'O telefone deve ter no máximo 15 caracteres.'
+        ];
+
+        $request->validate([
+            'nome' => 'required|string|max:255',
+            'cep' => 'required|string|max:255',
+            'endereco' => 'required|string|max:255',
+            'bairro' => 'required|string|max:255',
+            'cidade' => 'required|string|max:255',
+            'estado' => 'required|string|max:255',
+            'telefone' => 'required|string|max:15',
+
+        ], $mensagens);
+
+        $paciente = Paciente::findOrFail($id);
+        $paciente->nome = $request->nome;
+        $paciente->cep = $request->cep;
+        $paciente->endereco = $request->endereco;
+        $paciente->bairro = $request->bairro;
+        $paciente->cidade = $request->cidade;
+        $paciente->estado = $request->estado;
+        $paciente->telefone = $request->telefone;
+        $paciente->save();
+
+        return response()->json(['message' => 'Paciente atualizado com sucesso!']);
+    }
+
 }

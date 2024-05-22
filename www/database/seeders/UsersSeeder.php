@@ -25,9 +25,16 @@ class UsersSeeder extends Seeder
                 'role' => 'secretaria',
             ],
             [
-                'nome' => 'John',
-                'username' => 'john',
+                'nome' => 'Jose Camargo',
+                'username' => 'jose',
                 'password' => 'psicologo',
+                'paciente_id' => NULL,
+                'role' => 'psicologo',
+            ],
+            [
+                'nome' => 'Carla da Silva',
+                'username' => 'carla',
+                'password' => '123456',
                 'paciente_id' => NULL,
                 'role' => 'psicologo',
             ],
