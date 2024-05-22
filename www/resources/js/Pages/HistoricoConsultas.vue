@@ -29,6 +29,12 @@
                     <p class="text-gray-500">{{ consulta.user.nome }}</p>
                   </div>
                 </div>
+                
+                <!--
+                <div v-if="$page.props.user.roles.includes('psicologo')">
+                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">Editar</button>
+                </div>
+                -->
               </template>
             </div>
           </div>

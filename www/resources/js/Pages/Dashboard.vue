@@ -51,13 +51,40 @@ import { Head } from '@inertiajs/inertia-vue3';
 
             <Head title="Psicologo"></Head>
 
-            <div class="min-h-screen flex flex-col justify-center items-center bg-gray-100">
-                <h1 class="text-3xl font-bold mb-8">Área do Psicólogo(a)</h1>
-                <div class="mt-8">
-                    <a href="/listapaciente" class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2">Lista de Pacientes</a>
-                    <a href="/documentos" class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2">Documentos</a>
+            <div class="py-10"> 
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="p-6 bg-white border-b border-gray-200">
+                            <a href="/listapaciente" class="text-black-600 hover:text-black-800 font-bold text-lg">Lista de Pacientes</a>
+                            <h1 class="ml-4 mt-2">Clique no link acima para visualizar e editar as informacoes de todos os pacientes.</h1>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <div class="py-0"> 
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="p-6 bg-white border-b border-gray-200">
+                            <a href="/documentos" class="text-black-600 hover:text-black-800 font-bold text-lg">Documentos</a>
+                            <h1 class="ml-4 mt-2">Clique aqui para gerar um documento.</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+            <div class="py-0"> 
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="p-6 bg-white border-b border-gray-200">
+                            <a :href="route('consultas.historico')" class="text-black-600 hover:text-black-800 font-bold text-lg">Histórico de Consultas</a>
+                            <h1 class="ml-4 mt-2">Clique no link acima para verificar seu histórico de atendimentos.</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            -->
 
         </div>
         
