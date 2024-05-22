@@ -20,9 +20,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'nome',
         'username',
         'password',
+        'paciente_id'
     ];
 
     /**
@@ -43,4 +44,9 @@ class User extends Authenticatable
     protected $casts = [
         'username_verified_at' => 'datetime',
     ];
+
+    public function paciente()
+    {
+        return $this->belongsTo(Paciente::class, 'paciente_id');
+    }
 }

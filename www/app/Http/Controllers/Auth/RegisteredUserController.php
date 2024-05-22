@@ -35,15 +35,16 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
+            'nome' => 'required|string|max:255',
             'username' => 'required|string|max:255|unique:users',
             'password' => 'required|min:6',
         ]);
 
         $user = User::create([
-            'name' => $request->name,
+            'nome' => $request->nome,
             'username' => $request->username,
             'password' => Hash::make($request->password),
+            'paciente_id' => NULL,
         ]);
 
         switch ($request->role) {
@@ -52,9 +53,6 @@ class RegisteredUserController extends Controller
                 break;
             case '2':
                 $user->assignRole('psicologo');
-                break;
-            case '3':
-                $user->assignRole('cliente');
                 break;
         }     
         

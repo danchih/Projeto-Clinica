@@ -18,30 +18,28 @@ class UsersSeeder extends Seeder
     {
         $users = [
             [
-                'name' => 'Admin',
+                'nome' => 'Admin',
                 'username' => 'admin',
                 'password' => 'secretaria',
+                'paciente_id' => NULL,
                 'role' => 'secretaria',
             ],
             [
-                'name' => 'John',
+                'nome' => 'John',
                 'username' => 'john',
                 'password' => 'psicologo',
+                'paciente_id' => NULL,
                 'role' => 'psicologo',
             ],
-            [
-                'name' => 'Thais',
-                'username' => 'thais',
-                'password' => 'cliente',
-                'role' => 'cliente',
-            ]
+
         ];
 
         foreach($users as $user) {
             $created_user = User::create([
-                'name' => $user['name'],
+                'nome' => $user['nome'],
                 'username' => $user['username'],
                 'password' => Hash::make($user['password']),
+                'paciente_id' => $user['paciente_id'],
             ]);
 
             $created_user->assignRole($user['role']);
