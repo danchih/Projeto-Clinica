@@ -40,6 +40,7 @@ MAIL_ENCRYPTION=tls
 MAIL_FROM_ADDRESS=from@example.com
 MAIL_FROM_NAME="${APP_NAME}"
 ```
+> Caso queria receber o email do MailTrap, substituia as informações de email acima pelas suas cadastradasno site o MailTrap
 Suba o container do Projeto:
 ```sh
 docker compose up -d
