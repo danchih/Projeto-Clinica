@@ -86,4 +86,10 @@ class ConsultaController extends Controller
             'consultas' => $consultas,
         ]);
     }
+
+    public function index()
+    {
+        $consultas = Consulta::all();
+        return response()->json($consultas);
+    }
 }

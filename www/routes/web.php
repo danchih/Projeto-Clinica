@@ -74,5 +74,10 @@ Route::put('/pacientes/{id}', [PacienteController::class, 'update']); // Rota de
 //Rota do MailTrap
 Route::post('/send-email', [ContactController::class, 'sendEmail']);
 
+Route::get('/info', function () {
+    return Inertia::render('InfoConsulta');
+})->name('info');
+
+Route::get('/consultas', [ConsultaController::class, 'index']);
 
 
