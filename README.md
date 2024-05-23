@@ -67,7 +67,12 @@ npm install
 ```sh
 npm run dev
 ```
-
+```sh
+npm install jspdf 
+```
+```sh
+npm install nodemailer
+```
 
 ## Comandos Rodar o Projeto:
 Caso esteja dentro da pasta WWW volte para Pasta Inicial do projeto (Projeto Clinica):
