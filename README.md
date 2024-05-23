@@ -56,17 +56,22 @@ Gere a key do projeto Laravel:
 ```sh
 php artisan key:generate
 ```
+Suba as Tabelas no phpMyAdmin:
+```sh
+php artisan migrate:fresh --seed
+```
 Saia do container:
 ```sh
 exit
 ```
-Intale os recursos necessarios para utilizar VueJS/Tailwindcss do projeto:
+Instale os recursos necessarios para utilizar VueJS/Tailwindcss do projeto:
 ```sh
 npm install
 ```
 ```sh
 npm run dev
 ```
+Instale os recursos adicionais para utilização do codigo:
 ```sh
 npm install jspdf 
 ```
