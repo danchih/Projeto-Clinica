@@ -64,7 +64,8 @@ Route::post('/pacientes', [PacienteController::class, 'store'])->name('pacientes
 //Rota para Consultas
 Route::get('/agendar-consulta', [ConsultaController::class, 'create'])->name('consultas.create');
 Route::post('/consultas', [ConsultaController::class, 'store'])->name('consultas.store');
-Route::get('/historico', [ConsultaController::class, 'historico'])->name('consultas.historico');
+Route::get('/historico-consultas', [ConsultaController::class, 'historico'])->name('consultas.historico');
+Route::get('/consultas-futuras', [ConsultaController::class, 'consultar'])->name('consultas.futuras');
 
 //Rota para Editar info do Paciente
 Route::get('/pacientes', [PacienteController::class, 'index']);
