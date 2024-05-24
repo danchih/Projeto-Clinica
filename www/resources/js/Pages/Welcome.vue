@@ -1,12 +1,6 @@
 <template>
     <div class="bg-gray-100 min-h-screen flex flex-col">
       <Navbar />
-      <div v-if="canLogin" class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-          <Link v-if="$page.props.auth.user" :href="route('dashboard')" class="text-white font-bold hover:underline ml-4">Dashboard</Link>
-          <template v-else>
-              <Link :href="route('login')" class="text-white font-bold hover:underline ml-4">Login</Link>
-          </template>
-      </div>
 
       <div class="container mx-auto px-4 py-12">
         <div class="max-w-4xl mx-auto">

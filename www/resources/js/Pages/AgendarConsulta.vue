@@ -11,7 +11,6 @@ import { Head } from '@inertiajs/inertia-vue3';
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                     Agendar Consulta
                 </h2>
-                <a :href="route('dashboard')" class="text-gray-800 font-bold hover:underline ml-2">Home do Cliente</a>
             </div>
         </template>
         <div class="py-12">

@@ -87,6 +87,28 @@ class ConsultaController extends Controller
         ]);
     }
 
+    public function consultar()
+    {
+        // Data e hora atual
+        $now = now();
+
+        // Obtém as consultas do paciente logado, com os dados completos do psicólogo
+        $consultas = Consulta::where('paciente_id', auth()->user()->paciente_id)
+                            ->with('user') // Carrega o relacionamento psicologo
+                            ->where('data', '>', $now->toDateString()) // Consultas anteriores ao dia de hoje
+                            ->orWhere(function ($query) use ($now) {
+                                $query->where('data', '=', $now->toDateString())
+                                    ->where('horario_inicio', '>=', $now->toTimeString());
+                            })
+                            ->orderBy('data', 'asc')
+                            ->orderBy('horario_inicio', 'asc')
+                            ->get();
+
+        return Inertia::render('ConsultasFuturas', [
+            'consultas' => $consultas,
+        ]);
+    }
+
     public function index()
     {
         $consultas = Consulta::where('user_id', auth()->user()->id)
