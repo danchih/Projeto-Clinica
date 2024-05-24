@@ -38,8 +38,6 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
-
 //Rota para vue Cadastro de Paciente
 Route::get('/cadastro', function () {
     return Inertia::render('Cadastro');
