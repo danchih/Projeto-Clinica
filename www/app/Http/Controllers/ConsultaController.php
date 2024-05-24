@@ -89,7 +89,22 @@ class ConsultaController extends Controller
 
     public function index()
     {
-        $consultas = Consulta::all();
+        $consultas = Consulta::where('user_id', auth()->user()->id)
+                            ->with('paciente') // Carrega o relacionamento paciente
+                            ->get();
         return response()->json($consultas);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validated = $request->validate([
+            'informacao' => 'nullable|string',
+        ]);
+
+        $consulta = Consulta::findOrFail($id);
+        $consulta->informacao = $validated['informacao'];
+        $consulta->save();
+
+        return response()->json(['message' => 'Informação atualizada com sucesso']);
     }
 }

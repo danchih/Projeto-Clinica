@@ -69,10 +69,9 @@ class RegisteredUserController extends Controller
 
             //Auth::login($user);
 
-            //return redirect(RouteServiceProvider::HOME);
-            return Redirect::route('register')->with('success', 'Usuário cadastrado com sucesso!');
+            return redirect(RouteServiceProvider::HOME)->with('success', 'Usuário cadastrado com sucesso!');;
         } catch (\Exception $e) {
-            return back()->withErrors(['message' => 'Erro ao cadastrar paciente: ' . $e->getMessage()]);
+            return back()->withErrors(['message' => 'Erro ao registrar o usuario: ' . $e->getMessage()]);
         }
     
     }
