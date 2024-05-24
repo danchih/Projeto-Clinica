@@ -38,6 +38,14 @@ Route::get('/cadastro', function () {
     return Inertia::render('Cadastro');
 })->name('cadastro');
 
+Route::get('/psicologo', function () {
+    return Inertia::render('Psicologo');
+})->name('psicologo');
+
+Route::get('/listapaciente', function () {
+    return Inertia::render('Listapaciente');
+})->name('listapaciente');
+
 //Route::resource('pacientes', PacienteController::class);
 
 /*Route::get('pacientes', [PacienteController::class, 'create'])
@@ -46,6 +54,11 @@ Route::post('/pacientes', [PacienteController::class, 'store']);*/
 
 Route::get('pacientes', [PacienteController::class, 'create'])->name('pacientes.create');
 Route::post('/pacientes', [PacienteController::class, 'store'])->name('pacientes.store');
+Route::post('/paciente-chegou', [PacienteController::class, 'pacienteChegou']);
+
+Route::get('/cadastro', [PacienteController::class, 'create1'])->name('cadastro');
+Route::get('/psicologo', [PacienteController::class, 'psicologo'])->name('psicologo');
+
 
 require __DIR__.'/auth.php';
 
