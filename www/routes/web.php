@@ -38,6 +38,8 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+
 //Rota para vue Cadastro de Paciente
 Route::get('/cadastro', function () {
     return Inertia::render('Cadastro');
@@ -75,10 +77,12 @@ Route::put('/pacientes/{id}', [PacienteController::class, 'update']); // Rota de
 //Rota do MailTrap
 Route::post('/send-email', [ContactController::class, 'sendEmail']);
 
+//Rota para Editar info da Consulta
 Route::get('/info', function () {
     return Inertia::render('InfoConsulta');
 })->name('info');
 
 Route::get('/consultas', [ConsultaController::class, 'index']);
+Route::put('/consultas/{id}', [ConsultaController::class, 'update']);
 
 
