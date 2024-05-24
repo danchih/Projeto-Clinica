@@ -112,6 +112,17 @@ import { Head } from '@inertiajs/inertia-vue3';
                 </div>
             </div>
 
+            <div class="py-10">
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="p-6 bg-white border-b border-gray-200">
+                            <a :href="route('consultas.futuras')" class="text-black-600 hover:text-black-800 font-bold text-lg">Consultas Futuras</a>
+                            <h1 class="ml-4 mt-2">Clique no link acima para verificar suas próximas consultas agendadas.</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </AuthenticatedLayout>

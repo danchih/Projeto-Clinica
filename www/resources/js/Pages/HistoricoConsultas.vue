@@ -11,7 +11,12 @@
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
           <div class="p-6 bg-white border-b border-gray-200">
             <div class="divide-y divide-gray-200">
-              <template v-for="consulta in consultas" :key="consulta.id">
+              <template v-if="consultas.length === 0">
+                <div class="py-2 text-center text-gray-800 text-base">
+                  Não existe um histórico de consultas.
+                </div>
+              </template>
+              <template v-else v-for="consulta in consultas" :key="consulta.id">
                 <div class="py-4 flex space-x-3">
                   <div class="flex-shrink-0">
                     <div class="h-8 w-8 rounded-full bg-info-100 flex items-center justify-center text-info-700">
@@ -25,7 +30,7 @@
                   </div>
                   <div class="flex-1">
                     <p class="text-sm text-gray-500">{{ formatDate(consulta.data) }}</p>
-                    <h3 class="text-lg font-medium text-gray-900">{{ consulta.horario_inicio }} às {{ consulta.horario_fim }}</h3>
+                    <h3 class="text-lg font-medium text-gray-900">{{ formatTime(consulta.horario_inicio) }} às {{ formatTime(consulta.horario_fim) }}</h3>
                     <p class="text-gray-500">{{ consulta.user.nome }}</p>
                   </div>
                 </div>
@@ -45,25 +50,32 @@
 </template>
 
 <script setup>
-import { ref, defineProps } from 'vue';
-import { Head } from '@inertiajs/inertia-vue3';
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+  import { ref, defineProps } from 'vue';
+  import { Head } from '@inertiajs/inertia-vue3';
+  import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 
-const props = defineProps({
-  consultas: {
-    type: Array,
-    required: true,
-  },
-});
+  const props = defineProps({
+    consultas: {
+      type: Array,
+      required: true,
+    },
+  });
 
-// Função para formatar a data
-const formatDate = (date) => {
-  const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
-  const adjustedDate = new Date(date);
-  adjustedDate.setDate(adjustedDate.getDate() + 1); // Ajuste para corrigir o dia exibido
+  // Função para formatar a data
+  const formatDate = (date) => {
+    const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+    const adjustedDate = new Date(date);
+    adjustedDate.setDate(adjustedDate.getDate() + 1); // Ajuste para corrigir o dia exibido
 
-  return adjustedDate.toLocaleDateString('pt-BR', options);
-};
+    return adjustedDate.toLocaleDateString('pt-BR', options);
+  };
+
+  // Função para formatar o horário
+  const formatTime = (time) => {
+    const [hour, minute] = time.split(':');
+    return `${hour}:${minute}`;
+  };
+  
 </script>
 
 <style scoped>

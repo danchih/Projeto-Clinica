@@ -94,10 +94,12 @@ export default {
                         console.error('Erro ao agendar consulta:', errors);
                     }
                 });
-            } catch (error) {
+            } 
+            catch (error) {
                 console.error('Erro ao agendar consulta:', error);
             }
         },
+
         calcularHorarioFim() {
             if (this.form.horario_inicio) {
                 const inicio = new Date(`1970-01-01T${this.form.horario_inicio}`);

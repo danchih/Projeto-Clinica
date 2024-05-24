@@ -13,6 +13,7 @@ import { defineProps } from 'vue';
           <a href="#depoimentos"><button @click="scrollToContato" class="text-white font-bold hover:underline ml-4">Depoimentos</button></a>
           <a href="#contatos"><button @click="scrollToContato" class="text-white font-bold hover:underline ml-4">Contatos</button></a>
           <a href="#contatos"><button @click="scrollToContato" class="text-white font-bold hover:underline ml-4 mr-20">Entre em contato</button></a>
+          <a href="/login" class="text-white font-bold hover:underline ml-4">Login</a> 
         </div>
       </div>
     </div>
