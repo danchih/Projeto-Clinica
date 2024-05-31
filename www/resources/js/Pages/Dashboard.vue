@@ -39,6 +39,17 @@ import { Head } from '@inertiajs/inertia-vue3';
                     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div class="p-6 bg-white border-b border-gray-200">
                             <a :href="route('cadastro')" class="text-black-600 hover:text-black-800 font-bold text-lg">Cadastro de Pacientes</a>
+                            <h1 class="ml-4 mt-2">Notificações.</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-0"> 
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="p-6 bg-white border-b border-gray-200">
+                            <a :href="route('cadastro')" class="text-black-600 hover:text-black-800 font-bold text-lg">Cadastro de Pacientes</a>
                             <h1 class="ml-4 mt-2">Clique aqui e faca cadastro de um novo paciente.</h1>
                         </div>
                     </div>
