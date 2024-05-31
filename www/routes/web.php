@@ -4,6 +4,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\PacienteController;
+use App\Http\Controllers\NotificacaoController;
 
 
 /*
@@ -54,10 +55,15 @@ Route::post('/pacientes', [PacienteController::class, 'store']);*/
 
 Route::get('pacientes', [PacienteController::class, 'create'])->name('pacientes.create');
 Route::post('/pacientes', [PacienteController::class, 'store'])->name('pacientes.store');
-Route::post('/paciente-chegou', [PacienteController::class, 'pacienteChegou']);
 
-Route::get('/cadastro', [PacienteController::class, 'create1'])->name('cadastro');
-Route::get('/psicologo', [PacienteController::class, 'psicologo'])->name('psicologo');
+Route::post('/paciente-chegou', [PacienteController::class, 'pacienteChegou']);
+Route::get('/verificar-notificacoes', [NotificacaoController::class, 'verificarNotificacoes']);
+
+Route::post('/marcar-notificacao-como-lida', [NotificacaoController::class, 'marcarComoLida']);
+
+
+
+
 
 
 require __DIR__.'/auth.php';

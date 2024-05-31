@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Paciente;
-use App\Events\PacienteChegou;
-use App\Notifications\PacienteChegouNotification;
+use Illuminate\Support\Facades\Cache;
 use Inertia\Inertia;
 
 
@@ -62,26 +61,16 @@ class PacienteController extends Controller
         return response()->json(['message' => 'Paciente cadastrado com sucesso!']);
     }
 
-    public function pacienteChegou(Request $request) {
-        $paciente = Paciente::find($request->paciente_id);
-        event(new PacienteChegou($paciente));
+    public function pacienteChegou(Request $request)
+    {
+        $pacienteId = $request->input('paciente_id');
+        $pacienteNome = $request->input('paciente_nome');
+        
+        // Use o cache para armazenar a notificação (aqui estamos usando cache para simplicidade)
+        $notificacoes = Cache::get('notificacoes', []);
+        $notificacoes[] = "O paciente $pacienteNome chegou";
+        Cache::put('notificacoes', $notificacoes, now()->addMinutes(5));
 
-        return response()->json(['message' => 'Aviso enviado ao psicólogo!']);
+        return response()->json(['message' => 'Notificação enviada ao psicólogo']);
     }
-
-    public function create1()
-{
-    return Inertia::render('Cadastro', [
-        'pusherKey' => env('PUSHER_APP_KEY'),
-        'pusherCluster' => env('PUSHER_APP_CLUSTER')
-    ]);
-}
-
-public function psicologo()
-{
-    return Inertia::render('Psicologo', [
-        'pusherKey' => env('PUSHER_APP_KEY'),
-        'pusherCluster' => env('PUSHER_APP_CLUSTER')
-    ]);
-}
 }

@@ -1,20 +1,17 @@
 <template>
-    <!-- Código do formulário de cadastro -->
-    <button @click="pacienteChegou(paciente?.id)">Avisar que paciente chegou</button>
+    <div>
+        <!-- Botão para sinalizar que o paciente chegou -->
+        <button @click="pacienteChegou(pacienteId)">Avisar que paciente chegou</button>
+    </div>
 </template>
 
 <script>
 import axios from 'axios';
-import Pusher from 'pusher-js';
 
 export default {
-    props: {
-        pusherKey: String,
-        pusherCluster: String
-    },
     data() {
         return {
-            paciente: null, // Inicialmente null
+            pacienteId: 1 // ID do paciente. Pode ser obtido de qualquer forma necessária
         };
     },
     methods: {
@@ -30,13 +27,6 @@ export default {
                 console.error('Erro ao enviar aviso:', error);
             }
         }
-    },
-    mounted() {
-        // Simulando a definição do paciente. Substitua isso pelo seu próprio método de obtenção do paciente.
-        this.paciente = {
-            id: 1,
-            nome: 'John Doe'
-        };
     }
 };
 </script>
