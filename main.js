@@ -19,7 +19,7 @@ let phpServer = require('node-php-server');
 
 // Setting the port and the host ip
 const port = 8080, host = '127.0.0.1';
-const serverUrl = `http://${host}:${port}`;
+const serverUrl = `http://${host}:${port}/login`;
 
 
 let mainWindow
