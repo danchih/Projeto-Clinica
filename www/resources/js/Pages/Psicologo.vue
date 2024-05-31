@@ -1,12 +1,11 @@
 <template>
+    <p>Teste Flavia</p>
     <div>
         <ul>
-            <li v-for="(notificacao, index) in notificacoes" :key="index">
-                <span>{{ notificacao }}</span><span>{{ notificacao.mensagem }}</span>
-                <button @click="marcarComoLida(notificacao.id)">Marcar como lida</button>
-            </li>
+            <li v-for="(notificacao, index) in notificacoes" :key="index">{{ notificacao }}</li>
         </ul>
     </div>
+
 </template>
 
 <script>
@@ -28,19 +27,12 @@ export default {
         async verificarNotificacoes() {
             try {
                 const response = await axios.get('/verificar-notificacoes');
-                this.notificacoes = response.data;
+                const novasNotificacoes = response.data;
+                if (novasNotificacoes.length > 0) {
+                    this.notificacoes.push(...novasNotificacoes);
+                }
             } catch (error) {
                 console.error('Erro ao verificar notificações:', error);
-            }
-        },
-        async marcarComoLida(notificacaoId) {
-            try {
-                const response = await axios.post('/marcar-notificacao-como-lida', { id: notificacaoId });
-                console.log(response.data.message);
-                // Remova a notificação da lista após marcá-la como lida
-                this.notificacoes = this.notificacoes.filter(notificacao => notificacao.id !== notificacaoId);
-            } catch (error) {
-                console.error('Erro ao marcar notificação como lida:', error);
             }
         }
     },
