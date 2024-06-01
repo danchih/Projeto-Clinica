@@ -61,9 +61,7 @@ Suba as Tabelas no phpMyAdmin:
 ```sh
 php artisan migrate:fresh --seed
 ```
-<<<<<<< Login
 
-=======
 Saia do container:
 ```sh
 exit
@@ -82,7 +80,6 @@ npm install jspdf
 ```sh
 npm install nodemailer
 ```
->>>>>>> main
 
 ## Comandos Rodar o Projeto:
 Caso esteja dentro da pasta WWW volte para Pasta Inicial do projeto (Projeto Clinica):
