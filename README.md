@@ -61,6 +61,28 @@ Suba as Tabelas no phpMyAdmin:
 ```sh
 php artisan migrate:fresh --seed
 ```
+<<<<<<< Login
+
+=======
+Saia do container:
+```sh
+exit
+```
+Instale os recursos necessarios para utilizar VueJS/Tailwindcss do projeto:
+```sh
+npm install
+```
+```sh
+npm run dev
+```
+Instale os recursos adicionais para utilização do codigo:
+```sh
+npm install jspdf 
+```
+```sh
+npm install nodemailer
+```
+>>>>>>> main
 
 ## Comandos Rodar o Projeto:
 Caso esteja dentro da pasta WWW volte para Pasta Inicial do projeto (Projeto Clinica):
