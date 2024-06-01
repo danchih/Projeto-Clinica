@@ -34,22 +34,45 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+        try {
+            $mensagens = [
+                'nome.required' => 'O nome é obrigatório.',
+                'username.required' => 'O username é obrigatório.',
+                'username.unique' => 'Este username já está em uso.',
+                'password.required' => 'A password é obrigatória.',
+                'password.min' => 'A password deve ter pelo menos 6 caracteres.'
+            ];
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+            $request->validate([
+                'nome' => 'required|string|max:255',
+                'username' => 'required|string|max:255|unique:users',
+                'password' => 'required|min:6',
+            ], $mensagens);
 
-        event(new Registered($user));
+            $user = User::create([
+                'nome' => $request->nome,
+                'username' => $request->username,
+                'password' => Hash::make($request->password),
+                'paciente_id' => NULL,
+            ]);
 
-        Auth::login($user);
+            switch ($request->role) {
+                case '1':
+                    $user->assignRole('secretaria');
+                    break;
+                case '2':
+                    $user->assignRole('psicologo');
+                    break;
+            }     
+            
+            event(new Registered($user));
 
-        return redirect(RouteServiceProvider::HOME);
+            //Auth::login($user);
+
+            return redirect(RouteServiceProvider::HOME)->with('success', 'Usuário cadastrado com sucesso!');;
+        } catch (\Exception $e) {
+            return back()->withErrors(['message' => 'Erro ao registrar o usuario: ' . $e->getMessage()]);
+        }
+    
     }
 }
