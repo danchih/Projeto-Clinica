@@ -14,7 +14,8 @@ use Illuminate\Auth\Events\Registered;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Validation\Rules;
-
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
 
 class PacienteController extends Controller
 {
@@ -85,7 +86,6 @@ class PacienteController extends Controller
         }
     }
 
-    
     public function index()
     {
         return Paciente::all();
@@ -123,5 +123,31 @@ class PacienteController extends Controller
 
         return response()->json(['message' => 'Paciente atualizado com sucesso!']);
     }
+
+    public function pacienteChegou(Request $request)
+    {
+        $pacienteId = $request->input('paciente_id');
+        $pacienteNome = $request->input('paciente_nome');
+        $psicologoId = $request->input('psicologo_id');
+    
+        Log::info("Recebido pacienteId: $pacienteId, pacienteNome: $pacienteNome, psicologoId: $psicologoId");
+    
+        if (!$pacienteId || !$pacienteNome) {
+            Log::error('Dados de paciente incompletos');
+            return response()->json(['message' => 'Dados de paciente incompletos'], 400);
+        }
+    
+        try {
+            $notificacoes = Cache::get('notificacoes', []);
+            $notificacoes[] = "O paciente $pacienteNome chegou";
+            Cache::put('notificacoes', $notificacoes, now()->addMinutes(5));
+    
+            Log::info('Notificação armazenada com sucesso');
+            return response()->json(['message' => 'Notificação enviada ao psicólogo']);
+        } catch (\Exception $e) {
+            Log::error('Erro ao processar notificação: ' . $e->getMessage());
+            return response()->json(['message' => 'Erro ao processar notificação'], 500);
+        }
+    } 
 
 }

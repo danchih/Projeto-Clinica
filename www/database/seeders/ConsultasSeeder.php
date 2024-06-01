@@ -29,7 +29,7 @@ class ConsultasSeeder extends Seeder
                 'paciente_id' => $pacientes[array_rand($pacientes)],
                 'data' => Carbon::parse('2024-08-01')->toDateString(), 
                 'horario_inicio' => '09:00',
-                'horario_fim' => '10:00',
+                'horario_fim' => '9:50',
                 'informacao' => null,
             ],
             [
@@ -37,7 +37,7 @@ class ConsultasSeeder extends Seeder
                 'paciente_id' => $pacientes[array_rand($pacientes)],
                 'data' => Carbon::parse('2024-05-02')->toDateString(), 
                 'horario_inicio' => '11:00',
-                'horario_fim' => '12:00',
+                'horario_fim' => '11:50',
                 'informacao' => 'Paciente liberado com sucesso.',
             ],
             [
@@ -45,7 +45,7 @@ class ConsultasSeeder extends Seeder
                 'paciente_id' => $pacientes[array_rand($pacientes)],
                 'data' => Carbon::parse('2024-06-01')->toDateString(), 
                 'horario_inicio' => '14:00',
-                'horario_fim' => '15:00',
+                'horario_fim' => '14:50',
                 'informacao' => null,
             ],
             [
@@ -53,7 +53,7 @@ class ConsultasSeeder extends Seeder
                 'paciente_id' => $pacientes[array_rand($pacientes)],
                 'data' => Carbon::parse('2024-05-22')->toDateString(), 
                 'horario_inicio' => '13:00',
-                'horario_fim' => '14:00',
+                'horario_fim' => '13:50',
                 'informacao' => 'O paciente deve retornar apos 15 dias para realizar uma nova sessao',
             ],
             [
@@ -61,7 +61,7 @@ class ConsultasSeeder extends Seeder
                 'paciente_id' => $pacientes[array_rand($pacientes)],
                 'data' => Carbon::parse('2024-09-01')->toDateString(), 
                 'horario_inicio' => '15:00',
-                'horario_fim' => '16:00',
+                'horario_fim' => '15:50',
                 'informacao' => null,
             ],
             [
@@ -69,7 +69,7 @@ class ConsultasSeeder extends Seeder
                 'paciente_id' => $pacientes[array_rand($pacientes)],
                 'data' => Carbon::parse('2024-04-03')->toDateString(), 
                 'horario_inicio' => '16:00',
-                'horario_fim' => '17:00',
+                'horario_fim' => '16:50',
                 'informacao' => 'Paciente deve retornar daqui 20 dias para realizar uma nova sessao',
             ],
             [
@@ -77,7 +77,7 @@ class ConsultasSeeder extends Seeder
                 'paciente_id' => $pacientes[array_rand($pacientes)],
                 'data' => Carbon::parse('2024-07-01')->toDateString(), 
                 'horario_inicio' => '17:00',
-                'horario_fim' => '18:00',
+                'horario_fim' => '17:50',
                 'informacao' => null,
             ],
             [
@@ -85,7 +85,7 @@ class ConsultasSeeder extends Seeder
                 'paciente_id' => $pacientes[array_rand($pacientes)],
                 'data' => Carbon::parse('2024-06-02')->toDateString(), 
                 'horario_inicio' => '08:00',
-                'horario_fim' => '09:00',
+                'horario_fim' => '08:50',
                 'informacao' => null,
             ],
         ];

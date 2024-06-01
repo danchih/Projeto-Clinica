@@ -129,4 +129,11 @@ class ConsultaController extends Controller
 
         return response()->json(['message' => 'Informação atualizada com sucesso']);
     }
+
+    public function allConsultas()
+    {
+        $consultas = Consulta::with(['paciente', 'user'])->get();
+        return response()->json($consultas);
+    }
+    
 }

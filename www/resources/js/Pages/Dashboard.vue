@@ -44,12 +44,29 @@ import { Head } from '@inertiajs/inertia-vue3';
                     </div>
                 </div>
             </div>
+
+            <div class="py-10"> 
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="p-6 bg-white border-b border-gray-200">
+                            <a :href="route('mensagem')" class="text-black-600 hover:text-black-800 font-bold text-lg">Mensagem</a>
+                            <h1 class="ml-4 mt-2">Clique aqui e avise que o paciente chegou</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
         </div>
 
         <div v-if="$page.props.user.roles.includes('psicologo')">
 
             <Head title="Psicologo"></Head>
+
+            <div>
+                <ul>
+                    <li v-for="(notificacao, index) in notificacoes" :key="index">{{ notificacao }}</li>
+                </ul>
+            </div>
 
             <div class="py-10"> 
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -130,6 +147,8 @@ import { Head } from '@inertiajs/inertia-vue3';
 
 
 <script>
+import axios from 'axios';
+
 export default {
     data() {
         return {
@@ -145,8 +164,15 @@ export default {
                 password: ''
             },
             errors: {},
-            processing: false
+            processing: false,
+            notificacoes: [],
+            polling: null
         };
+    },
+    mounted() {
+        this.verificarNotificacoes();
+        // Configure o polling para verificar notificações a cada 5 segundos
+        this.polling = setInterval(this.verificarNotificacoes, 5000); // 5 segundos
     },
     methods: {
         async preencherEndereco() {
@@ -180,7 +206,21 @@ export default {
             } finally {
                 this.processing = false;
             }
+        },
+        async verificarNotificacoes() {
+            try {
+                const response = await axios.get(`/verificar-notificacoes`);
+                const novasNotificacoes = response.data;
+                if (novasNotificacoes.length > 0) {
+                this.notificacoes.push(...novasNotificacoes);
+                }
+            } catch (error) {
+                console.error('Erro verificando notificações:', error);
+            }
         }
+    },
+    beforeDestroy() {
+        clearInterval(this.polling);
     }
 };
 </script>

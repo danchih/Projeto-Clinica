@@ -21,21 +21,21 @@ class UsersSeeder extends Seeder
             [
                 'nome' => 'Admin',
                 'username' => 'admin',
-                'password' => 'secretaria',
+                'password' => '123456',
                 'paciente_id' => NULL,
                 'role' => 'secretaria',
             ],
             [
                 'nome' => 'Jose Camargo',
                 'username' => 'jose',
-                'password' => 'psicologo',
+                'password' => '123456',
                 'paciente_id' => NULL,
                 'role' => 'psicologo',
             ],
             [
                 'nome' => 'Carla da Silva',
                 'username' => 'carlasilva',
-                'password' => 'carlas',
+                'password' => '123456',
                 'paciente_id' => NULL,
                 'role' => 'psicologo',
             ],
@@ -57,7 +57,7 @@ class UsersSeeder extends Seeder
             [
                 'nome' => 'Maria Oliveira',
                 'username' => 'mariaoliveira',
-                'password' => 'senha123',
+                'password' => '123456',
                 'role' => 'cliente',
                 'paciente' => [
                     'nome' => 'Maria Oliveira',
@@ -72,7 +72,7 @@ class UsersSeeder extends Seeder
             [
                 'nome' => 'Carlos Pereira',
                 'username' => 'carlospereira',
-                'password' => 'carlosp',
+                'password' => '123456',
                 'role' => 'cliente',
                 'paciente' => [
                     'nome' => 'Carlos Pereira',

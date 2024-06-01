@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ConsultaController;
 use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\NotificacaoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -83,4 +84,12 @@ Route::get('/info', function () {
 Route::get('/consultas', [ConsultaController::class, 'index']);
 Route::put('/consultas/{id}', [ConsultaController::class, 'update']);
 
+//Rota de Rensagens
+Route::get('/mensagem', function () {
+    return Inertia::render('Mensagem');
+})->name('mensagem');
+
+Route::get('/allconsultas', [ConsultaController::class, 'allConsultas']);
+Route::post('/paciente-chegou', [PacienteController::class, 'pacienteChegou']);
+Route::get('/verificar-notificacoes', [NotificacaoController::class, 'verificarNotificacoes']);
 

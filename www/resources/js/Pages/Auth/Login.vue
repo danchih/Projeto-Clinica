@@ -46,6 +46,10 @@ const submit = () => {
                 <InputError class="mt-2" :message="form.errors.password" />
             </div>
 
+            <a href="/" class="underline text-sm text-gray-600 hover:text-gray-900">
+                    Voltar para home do site
+            </a>
+
             <div class="flex items-center justify-end mt-4">
                 <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Login
