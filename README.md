@@ -62,7 +62,6 @@ Suba as Tabelas no phpMyAdmin:
 php artisan migrate:fresh --seed
 ```
 
-
 ## Comandos Rodar o Projeto:
 Caso esteja dentro da pasta WWW volte para Pasta Inicial do projeto (Projeto Clinica):
 ```sh
