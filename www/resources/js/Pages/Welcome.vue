@@ -31,8 +31,7 @@
             
             <p id="depoimentos" class="mt-8">
               <strong>Depoimentos</strong>
-               <div class="flex flex-col items-center mb-12">
-                <img src="public/images/teste.jpg" alt="Descrição da Imagem" class="w-32 h-32 rounded-full mb-4">                  
+               <div class="flex flex-col items-center mb-12">                
                 <p class="text-center text-gray-700">Ana, uma jovem de 28 anos, procurou a nossa clínica devido a sentimentos persistentes de ansiedade e depressão. Ela relatava dificuldade em se concentrar no trabalho, insônia e um sentimento constante de preocupação que prejudicava suas relações pessoais e profissionais.
                   Inicialmente, Ana foi submetida a uma avaliação detalhada para entender melhor suas necessidades e determinar a melhor abordagem terapêutica. Ela começou a terapia cognitivo-comportamental (TCC), focada em identificar e modificar pensamentos negativos automáticos.
                   Com o passar das semanas, Ana começou a desenvolver estratégias eficazes para lidar com sua ansiedade. Aprendeu técnicas de relaxamento e começou a implementar mudanças em sua rotina que melhoraram significativamente seu bem-estar.
@@ -40,8 +39,7 @@
                   A jornada de Ana é um exemplo inspirador de como o apoio psicológico pode transformar vidas. Nossa clínica está comprometida em oferecer o mesmo nível de cuidado e dedicação a todos os nossos pacientes.</p>
                </div>
 
-               <div class="flex flex-col items-center mb-12">
-                <img src="public/images/teste.jpg" alt="Descrição da Imagem" class="w-32 h-32 rounded-full mb-4">                  
+               <div class="flex flex-col items-center mb-12">            
                 <p class="text-center text-gray-700">Ana, uma jovem de 28 anos, procurou a nossa clínica devido a sentimentos persistentes de ansiedade e depressão. Ela relatava dificuldade em se concentrar no trabalho, insônia e um sentimento constante de preocupação que prejudicava suas relações pessoais e profissionais.
                   "Quando decidimos procurar ajuda, nosso casamento estava à beira do colapso. As discussões se tornaram constantes, e parecia que não conseguíamos nos entender mais. Estávamos casados há dez anos, mas os últimos dois foram especialmente difíceis. Foi então que encontramos a Clínica de Psicologia Esperança e decidimos tentar a terapia de casal.
                   Desde a primeira sessão, sentimos que estávamos em boas mãos. A Dra. Clara nos ouviu atentamente e nos ajudou a identificar os padrões negativos de comunicação que estavam corroendo nossa relação. Ela nos ensinou técnicas de comunicação eficaz e nos encorajou a expressar nossos sentimentos de maneira honesta e respeitosa.
@@ -51,8 +49,7 @@
                   - João e Maria</p>
               </div>
 
-              <div class="flex flex-col items-center mb-12">
-                <img src="public/images/teste.jpg" alt="Descrição da Imagem" class="w-32 h-32 rounded-full mb-4">                  
+              <div class="flex flex-col items-center mb-12">              
                 <p class="text-center text-gray-700">Ana, uma jovem de 28 anos, procurou a nossa clínica devido a sentimentos persistentes de ansiedade e depressão. Ela relatava dificuldade em se concentrar no trabalho, insônia e um sentimento constante de preocupação que prejudicava suas relações pessoais e profissionais.
                   "Somos a família Silva e gostaríamos de compartilhar nossa experiência com a terapia familiar na Clínica de Psicologia. Nosso lar estava passando por um momento muito difícil. A comunicação entre nós havia se tornado praticamente inexistente, e as discussões eram frequentes. Isso afetava principalmente nossos filhos, Lucas e Mariana, de 15 e 12 anos, respectivamente.
                   Decidimos procurar ajuda porque não queríamos que essas tensões destruíssem nossa família. Desde o primeiro contato, fomos recebidos com muita empatia e profissionalismo. A Dra. Júlia nos guiou pacientemente através do processo de terapia familiar, criando um ambiente seguro onde todos nós podíamos expressar nossos sentimentos e preocupações.
